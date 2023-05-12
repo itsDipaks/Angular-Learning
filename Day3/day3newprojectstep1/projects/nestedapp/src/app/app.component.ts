@@ -2,9 +2,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+  
+  <div>
+  <h1>Hellow all</h1>
+  {{title}}
+  </div>
+  `,
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
-  title = 'nestedapp';
+  title = 'Welcome to nested Components';
 }
