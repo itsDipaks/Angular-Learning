@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
   <div>
 <app-navbar></app-navbar>
-
+<app-intro></app-intro>
   </div>
   
   
