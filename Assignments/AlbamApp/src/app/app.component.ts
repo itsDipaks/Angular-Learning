@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 <app-navbar></app-navbar>
 <app-intro></app-intro>
 <app-body></app-body>
-<app-card></app-card>
   </div>
   
   
