@@ -4,7 +4,6 @@ selector:"app-child",
 inputs:["quantity"],
 template:`
 <div>hellow From Child
-
 <ng-content></ng-content>
 {{quantity}}
 </div>

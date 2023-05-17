@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
+     <div class="container">
     <div style="text-align:center">
       <h1>Pipes in Angular</h1>
     </div>
@@ -11,8 +12,8 @@ import { Component } from '@angular/core';
     <!-- <ul>
       <ol *ngFor="let hero of heroes">{{ hero.title }}</ol>
     </ul> -->
-    <table>
-      <thead>
+    <table class="table table-striped table-hover table-sm table-responsive">
+      <thead class="table-dark">
         <tr>
           <th>Sl#</th>
           <th>Title</th>
@@ -27,18 +28,21 @@ import { Component } from '@angular/core';
       <tbody>
         <tr *ngFor="let hero of heroes">
           <td>{{ hero.sl }}</td>
-          <td>{{ hero.title }}</td>
+          <td>{{ hero.title | uppercase }}</td>
           <td>
-            <img [src]="hero.poster" [alt]="hero.title" width="60">
+            <img [src]="hero.poster" [alt]="hero.title" width="50">
           </td>
           <td>{{ hero.firstname+" "+hero.lastname }}</td>
           <td>{{ hero.city }}</td>
-          <td>{{ hero.ticketprice }}</td>
-          <td>{{ hero.releasedate }}</td>
-          <td>{{ hero.movieslist.length }}</td>
+          <td>{{ hero.ticketprice | currency : 'CAD' : 'symbol' : '3.2-4' }}</td>
+          <td>{{ hero.releasedate | date: 'EEEE, MMMM d, y' }}</td>
+          <td>
+            <button class="masaibtn btn btn-primary">{{ hero.movieslist.length }}</button>
+          </td>
         </tr>
       </tbody>
     </table>
+    </div>
   `,
   styles: []
 })
