@@ -40,7 +40,7 @@ import { Component } from "@angular/core";
     {{val.ticketprice | currency:"INR"}}
 </td>
 <td>
-    {{val.releasedate}}
+    {{val.releasedate | date:"dd/MM/YYYY"}}
 </td>
 
         </tr>
