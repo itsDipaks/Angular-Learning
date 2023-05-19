@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserServices } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import { Component } from '@angular/core';
     <th>email</th>
   </thead>
   <tbody>
-  <tr *ngFor="let user of users">
+  <tr *ngFor="let user of usersData.data">
           <td>{{ user.id }}</td>
           <td>{{ user.first_name }}</td>
           <td>{{ user.last_name }}</td>
@@ -28,5 +29,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = "AJAX in Angular";
-  users:any = [];
+  usersData:any = [];
+  constructor(private ud:UserServices){
+console.log(this.usersData)
+  }
+
+  ngOnInit(){
+    this.ud.getusersdata().subscribe(res=>this.usersData=res)
+  }
 }
