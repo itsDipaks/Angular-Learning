@@ -1,19 +1,23 @@
 import {Component} from "@angular/core"
 
 @Component({
-    selector:"app-parentCP"
-    ,template:`
-    <div>
-        
-    <h3>
-    Parent Component 
-    </h3> 
-{{data}}
-<app-childCP [parentdata]="data"></app-childCP>
+selector:"app-parentCP",
+template:`
+
+<div>
+
+<app-childCP (getchildData)="getData($event)"></app-childCP>
+<h3>Parent Component</h3>
+<h4> {{data}} </h4>
+
 </div>
-    `
+`
 })
 
 export class ParentCompoCP{
-data:string="Data From Parent"
+    data=""
+getData(data:string){
+this.data=data
+console.log("yes")
+}
 }

@@ -1,17 +1,22 @@
-import { Component, Input } from "@angular/core"
+import {Component,Output,EventEmitter} from "@angular/core"
 
 @Component({
-    selector: "app-childCP"
-    , template: `
-    <div>
-    <div> 
-  <h3>  Child Component</h3>
-</div> 
-    {{parentdata}}
+selector:"app-childCP",
+template:`
+
+<div>
+    
+    
+   <h3>
+   Child Component
+   </h3>
+    
+    <input placeholder="is in child component"  #inputval/>
+    <button (click)="getchildData.emit(inputval.value)">Pass Data To Parent</button>
     </div>
-    `
+`
 })
 
-export class ChildCompoCP {
-    @Input() parentdata = ""
+export class ChildCompoCP{
+@Output() getchildData=new EventEmitter<string>()
 }

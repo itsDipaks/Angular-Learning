@@ -11,12 +11,12 @@ import { Component } from '@angular/core';
   <app-binding></app-binding>
 <hr>
   <h1>Passing Props From Parent to Child </h1>
-<app-parentCP></app-parentCP>
+<app-parentPC></app-parentPC>
  
 <hr>
 
 <h1>Passing Props From Child to Parent</h1>
-
+<app-parentCP></app-parentCP>
   </div>
   `
 
